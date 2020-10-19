@@ -24,19 +24,21 @@ export default class extends Component {
       hideDownload,
       hideZoom,
       showRotate,
-      imageBackgroundColor
+      imageBackgroundColor,
+      imgStyle,
+      divStyle
     } = this.props;
     const { modalOpen } = this.state;
 
     return (
-      <div>
+      <div style={{divStyle}} >
         <img
           className={className}
-          style={{
+          style={[imgStyle, {
             cursor: "pointer",
             maxWidth: "100%",
             maxHeight: "100%"
-          }}
+          }]}
           onClick={this.toggleModal}
           src={small}
           srcSet={smallSrcSet}
